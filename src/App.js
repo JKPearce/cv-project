@@ -11,11 +11,11 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <main>
         <General />
         <Education />
         <Experience />
-      </div>
+      </main>
     );
   }
 }
