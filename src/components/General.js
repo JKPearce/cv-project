@@ -8,7 +8,18 @@ class General extends Component {
   }
 
   render() {
-    return <div className="general"></div>;
+    return (
+      <div className="general">
+        <label htmlFor="firstName">First Name</label>
+        <input type="text" name="firstName" id="firstName" />
+        <label htmlFor="lastName">Last Name</label>
+        <input type="text" name="lastName" id="lastName" />
+        <label htmlFor="email">Email</label>
+        <input type="email" name="email" id="email" />
+        <label htmlFor="phoneNumber">Phone Number</label>
+        <input type="tel" name="phoneNumber" id="phoneNumber" />
+      </div>
+    );
   }
 }
 
