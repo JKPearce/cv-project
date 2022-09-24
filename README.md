@@ -15,12 +15,12 @@ The Odin Project CV project
   - [x] Location
   - [x] From What year
   - [x] To what year
-- [ ] Add work experience section
-  - [ ] Position title
-  - [ ] Company name
-  - [ ] From (year)
-  - [ ] To (year)
-  - [ ] Short description
+- [x] Add work experience section
+  - [x] Position title
+  - [x] Company name
+  - [x] From (year)
+  - [x] To (year)
+  - [x] Short description
 - [ ] style each section
   - [ ] style general information input
   - [ ] style education input
