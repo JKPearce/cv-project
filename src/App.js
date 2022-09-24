@@ -20,6 +20,8 @@ class App extends Component {
       education: [],
       experience: [],
     };
+
+    // this.delete = this.delete.bind(this);
   }
 
   handleGeneral = (data) => {
@@ -58,10 +60,11 @@ class App extends Component {
 
   delete = (arrayName, index) => {
     this.setState(() => {
+      console.log("entered delete");
       const newState =
         arrayName === "education"
-          ? [this.state.education]
-          : [this.state.experience];
+          ? [...this.state.education]
+          : [...this.state.experience];
 
       newState.splice(index, 1);
       return { [arrayName]: newState };
@@ -83,7 +86,7 @@ class App extends Component {
               <Education
                 key={i}
                 parentCallback={(data) => this.handleEducation(data, i)}
-                delete={this.delete("education", i)}
+                delete={() => this.delete("education", i)}
               />
             </>
           ))}
