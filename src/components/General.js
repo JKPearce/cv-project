@@ -55,6 +55,14 @@ class General extends Component {
           onChange={this.handleChange}
           value={this.state.phoneNumber}
         />
+        <textarea
+          name="aboutMe"
+          id="aboutMe"
+          placeholder="A short description / About me"
+          rows="3"
+          onChange={this.handleChange}
+          value={this.state.aboutMe}
+        />
       </div>
     );
   }

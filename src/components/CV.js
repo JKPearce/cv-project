@@ -8,12 +8,13 @@ class CV extends Component {
   }
 
   render() {
-    const { firstName, lastName, email, phoneNumber } = this.props.data;
+    const { firstName, lastName, email, phoneNumber, aboutMe } =
+      this.props.data;
     return (
       <div className="cv">
         <header className="introduction">
           <h1>{`${firstName} ${lastName}`}</h1>
-          {/* Add an about me section here */}
+          <p>{aboutMe}</p>
         </header>
         <div className="contact-details">
           <h3>Personal Details</h3>
