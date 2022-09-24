@@ -40,14 +40,6 @@ class Education extends Component {
         />
         <input
           type="text"
-          name="location"
-          id="location"
-          placeholder="Location e.g. Sydney"
-          onChange={this.handleChange}
-          value={this.state.location}
-        />
-        <input
-          type="text"
           name="startYear"
           id="startYear"
           placeholder="Start Year"
