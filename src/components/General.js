@@ -60,6 +60,7 @@ class General extends Component {
           id="aboutMe"
           placeholder="A short description / About me"
           rows="3"
+          maxLength={300}
           onChange={this.handleChange}
           value={this.state.aboutMe}
         />

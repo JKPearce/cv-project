@@ -12,14 +12,17 @@ class CV extends Component {
       this.props.data;
     return (
       <div className="cv">
-        <header className="introduction">
-          <h1>{`${firstName} ${lastName}`}</h1>
-          <p>{aboutMe}</p>
-        </header>
-        <div className="contact-details">
-          <h3>Personal Details</h3>
-          <div>{`Email: ${email}`}</div>
-          <div>{`Phone Number: ${phoneNumber}`}</div>
+        <div className="cv-details">
+          <h1 className="cv-name">{`${firstName} ${lastName}`}</h1>
+          <div className="cv-contact-details">
+            <h3>Personal Details</h3>
+            <p>{`✉️ ${email}`}</p>
+            <p>{`📞 ${phoneNumber}`}</p>
+          </div>
+          <div className="cv-aboutMe">
+            <h3>About Me</h3>
+            <p>{aboutMe}</p>
+          </div>
         </div>
       </div>
     );

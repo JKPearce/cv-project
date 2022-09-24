@@ -10,7 +10,13 @@ class App extends Component {
     super(props);
 
     this.state = {
-      general: { firstName: "", lastName: "", email: "", phoneNumber: "" },
+      general: {
+        firstName: "",
+        lastName: "",
+        email: "",
+        phoneNumber: "",
+        aboutMe: "",
+      },
       education: {},
       experience: {},
     };
@@ -24,9 +30,11 @@ class App extends Component {
     const { general } = this.state;
     return (
       <main>
-        <General parentCallback={this.handleGeneral} />
-        <Education />
-        <Experience />
+        <div className="input-section">
+          <General parentCallback={this.handleGeneral} />
+          <Education />
+          <Experience />
+        </div>
         <CV data={general} />
       </main>
     );
