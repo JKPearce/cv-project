@@ -8,13 +8,13 @@ The Odin Project CV project
 
 # todo
 
-- [ ] Add an introduction section
-- [ ] Add an eduction section
-  - [ ] Degree name
-  - [ ] School name
-  - [ ] Location
-  - [ ] From What year
-  - [ ] To what year
+- [x] Add an introduction section
+- [x] Add an eduction section
+  - [x] Degree name
+  - [x] School name
+  - [x] Location
+  - [x] From What year
+  - [x] To what year
 - [ ] Add work experience section
   - [ ] Position title
   - [ ] Company name
