@@ -4,8 +4,8 @@ The Odin Project CV project
 
 # ideas
 
-> Make placeholders on input boxes change into input title
-> Button to add multiple educations / experiences
+- Make placeholders on input boxes change into input title
+- ~~Button to add multiple educations / experiences~~
 
 # todo
 
