@@ -54,6 +54,7 @@ class Education extends Component {
           onChange={this.handleChange}
           value={this.state.endYear}
         />
+        <button onClick={this.props.delete}>Delete</button>
       </div>
     );
   }

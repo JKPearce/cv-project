@@ -63,6 +63,7 @@ class Experience extends Component {
           onChange={this.handleChange}
           value={this.state.description}
         />
+        <button onClick={this.props.delete}>Delete</button>
       </div>
     );
   }

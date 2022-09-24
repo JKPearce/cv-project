@@ -17,34 +17,91 @@ class App extends Component {
         phoneNumber: "",
         aboutMe: "",
       },
-      education: {},
-      experience: {},
+      education: [],
+      experience: [],
     };
   }
 
   handleGeneral = (data) => {
     this.setState({ general: data });
   };
-  handleEducation = (data) => {
-    this.setState({ education: data });
+
+  handleEducation = (data, index) => {
+    this.setState(() => {
+      const newEducation = [...this.state.education];
+      newEducation[index] = data;
+      return { education: newEducation };
+    });
   };
-  handleExperience = (data) => {
-    this.setState({ experience: data });
+
+  handleExperience = (data, index) => {
+    this.setState(() => {
+      const newExperience = [...this.state.experience];
+      newExperience[index] = data;
+      return { experience: newExperience };
+    });
+  };
+
+  addEducation = () => {
+    const newEducation = [...this.state.education];
+
+    newEducation.push({});
+    this.setState({ education: newEducation });
+  };
+
+  addExperience = () => {
+    const newExperience = [...this.state.experience];
+
+    newExperience.push({});
+    this.setState({ experience: newExperience });
+  };
+
+  delete = (arrayName, index) => {
+    this.setState(() => {
+      const newState =
+        arrayName === "education"
+          ? [this.state.education]
+          : [this.state.experience];
+
+      newState.splice(index, 1);
+      return { [arrayName]: newState };
+    });
   };
 
   render() {
-    const { general } = this.state;
+    const { general, education, experience } = this.state;
+    // console.log("parent ", this.state);
+
     return (
       <main>
         <div className="input-section">
           <h2>Personal Details</h2>
           <General parentCallback={this.handleGeneral} />
           <h2>Education</h2>
-          <Education parentCallback={this.handleEducation} />
+          {this.state.education.map((e, i) => (
+            <>
+              <Education
+                key={i}
+                parentCallback={(data) => this.handleEducation(data, i)}
+                delete={this.delete("education", i)}
+              />
+            </>
+          ))}
+          <button onClick={this.addEducation}>Add Education</button>
+
           <h2>Experience</h2>
-          <Experience parentCallback={this.handleExperience} />
+          {this.state.experience.map((e, i) => (
+            <>
+              <Experience
+                key={i}
+                parentCallback={(data) => this.handleExperience(data, i)}
+                delete={() => this.delete("experience", i)}
+              />
+            </>
+          ))}
+          <button onClick={this.addExperience}>Add Experience</button>
         </div>
-        <CV data={general} />
+        <CV general={general} education={education} experience={experience} />
       </main>
     );
   }
