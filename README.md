@@ -6,6 +6,8 @@ The Odin Project CV project
 
 - Make placeholders on input boxes change into input title
 - ~~Button to add multiple educations / experiences~~
+- Add skills section
+- Add prefill test data button to fill sections with text
 
 # todo
 
@@ -22,7 +24,7 @@ The Odin Project CV project
   - [x] From (year)
   - [x] To (year)
   - [x] Short description
-- [ ] style each section
-  - [ ] style general information input
-  - [ ] style education input
-  - [ ] style experience input
+- [x] style each section
+  - [x] style general information input
+  - [x] style education input
+  - [x] style experience input

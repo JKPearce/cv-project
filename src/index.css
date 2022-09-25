@@ -85,3 +85,42 @@ textarea {
 .cv-name {
   margin-bottom: 1rem;
 }
+
+.cv-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.cv-body h3 {
+  border-bottom: 1px solid blue;
+}
+
+.cv-experience,
+.cv-education {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cv-experience p {
+  padding: 1rem 0;
+}
+
+.cv-experience-details,
+.cv-education-details {
+  border-bottom: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.cv-experience-details:last-child,
+.cv-education-details:last-child {
+  border-bottom: none;
+}
+
+.date-section {
+  font-size: 12px;
+}

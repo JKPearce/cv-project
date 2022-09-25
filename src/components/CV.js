@@ -30,27 +30,30 @@ class CV extends Component {
           </div>
         </div>
         <div className="cv-body">
+          <div className="cv-experience">
+            <h3>Work Experience</h3>
+            {this.props.experience.map((exp, index) => (
+              <div key={index} className="cv-experience-details">
+                <h4>{exp.positionTitle}</h4>
+                <div className="date-section">
+                  <span>{exp.companyName} | </span>
+                  <span>{exp.startYear}</span> -<span>{exp.endYear}</span>
+                </div>
+                <p>{exp.description}</p>
+              </div>
+            ))}
+          </div>
           <div className="cv-education">
             <h3>Education</h3>
             {this.props.education.map((school, index) => (
-              <div key={index} className="cv-education">
+              <div key={index} className="cv-education-details">
                 <h4>{school.degreeName}</h4>
-                <h4>{school.schoolName}</h4>
-                <h6>{school.startYear}</h6>
-                <h6>{school.endYear}</h6>
+                <div className="date-section">
+                  <span>{school.schoolName} | </span>
+                  <span>{school.startYear}</span> -<span>{school.endYear}</span>
+                </div>
               </div>
             ))}
-            <div className="cv-experience">
-              <h3>Work Experience</h3>
-              {this.props.experience.map((exp, index) => (
-                <div key={index} className="cv-education">
-                  <h4>{exp.companyName}</h4>
-                  <h4>{exp.positionTitle}</h4>
-                  <h6>{exp.startYear}</h6>
-                  <h6>{exp.endYear}</h6>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
