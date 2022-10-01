@@ -22,6 +22,7 @@ const App = () => {
       [e.target.name]: e.target.value,
     });
   }
+
   function handleEducation(e, i) {
     setEducation((prevState) => {
       const newEducation = [...prevState];
@@ -40,28 +41,31 @@ const App = () => {
 
   function addEducation() {
     const newEducation = [...education];
-
     newEducation.push({});
     setEducation(newEducation);
   }
 
   function addExperience() {
     const newExperience = [...experience];
-
     newExperience.push({});
-    setEducation(newExperience);
+    setExperience(newExperience);
   }
 
   function deleteEducation(index) {
     setEducation((prevState) => {
-      console.log(index);
       const newEducationState = [...prevState];
       newEducationState.splice(index, 1);
       return newEducationState;
     });
   }
+  function deleteExperience(index) {
+    setExperience((prevState) => {
+      const newExpState = [...prevState];
+      newExpState.splice(index, 1);
+      return newExpState;
+    });
+  }
 
-  //delete={() => this.delete("education", i)}
   return (
     <main>
       <div className="input-section">
@@ -80,8 +84,23 @@ const App = () => {
           </>
         ))}
         <button onClick={addEducation}>Add Education</button>
+
+        <h2>Experience</h2>
+        {experience.map((e, i) => (
+          <>
+            <Experience
+              experience={experience}
+              key={i}
+              id={i}
+              onChange={handleExperience}
+              remove={deleteExperience}
+            />
+          </>
+        ))}
+        <button onClick={addExperience}>Add Experience</button>
       </div>
-      <CV {...general} education={education} />
+
+      <CV {...general} education={education} experience={experience} />
     </main>
   );
 };
@@ -102,18 +121,18 @@ const App = () => {
 //       ))} */}
 //     </div>
 //     {/*
-//       <h2>Experience</h2>
-//       {experience.map((e, i) => (
-//         <>
-//           <Experience
-//             key={i}
-//             parentCallback={(data) => this.handleExperience(data, i)}
-//             delete={() => this.delete("experience", i)}
-//           />
-//         </>
-//       ))}
-//       <button onClick={addExperience}>Add Experience</button>
-//     </div>
+//   <h2>Experience</h2>
+//   {experience.map((e, i) => (
+//     <>
+//       <Experience
+//         key={i}
+//         parentCallback={(data) => this.handleExperience(data, i)}
+//         delete={() => this.delete("experience", i)}
+//       />
+//     </>
+//   ))}
+//   <button onClick={addExperience}>Add Experience</button>
+// </div>
 //     <CV general={general} education={education} experience={experience} /> */}
 //   </main>
 // );
