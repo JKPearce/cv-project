@@ -1,5 +1,3 @@
-/* eslint-disable no-useless-constructor */
-//A section to add general information like name, email, phone number.
 import React from "react";
 
 const General = ({ general, onChange }) => {
