@@ -22,11 +22,36 @@ const App = () => {
       [e.target.name]: e.target.value,
     });
   }
-
-  function addExperience() {
-    setEducation((current) => [...current, {}]);
+  function handleEducation(e, i) {
+    setEducation((prevState) => {
+      const newEducation = [...prevState];
+      newEducation[i] = { ...prevState[i], [e.target.name]: e.target.value };
+      return newEducation;
+    });
+  }
+  function handleExperience(e, i) {
+    setExperience((prevState) => {
+      const newExperience = [...prevState];
+      newExperience[i] = { ...prevState[i], [e.target.name]: e.target.value };
+      return newExperience;
+    });
   }
 
+  function addEducation() {
+    const newEducation = [...education];
+
+    newEducation.push({});
+    setEducation(newEducation);
+  }
+
+  function addExperience() {
+    const newExperience = [...experience];
+
+    newExperience.push({});
+    setEducation(newExperience);
+  }
+
+  //delete={() => this.delete("education", i)}
   return (
     <main>
       <div className="input-section">
@@ -36,13 +61,14 @@ const App = () => {
         {education.map((e, i) => (
           <>
             <Education
+              education={education}
+              id={i}
               key={i}
-              parentCallback={(data) => this.handleEducation(data, i)}
-              delete={() => this.delete("education", i)}
+              onChange={handleEducation}
             />
           </>
         ))}
-        <button onClick={addExperience}>Add Experience</button>
+        <button onClick={addEducation}>Add Education</button>
       </div>
       <CV {...general} />
     </main>
