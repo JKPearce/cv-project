@@ -1,7 +1,14 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from "react";
 
-const CV = ({ firstName, lastName, email, phoneNumber, aboutMe }) => {
+const CV = ({
+  firstName,
+  lastName,
+  email,
+  phoneNumber,
+  aboutMe,
+  education,
+}) => {
   return (
     <div className="cv">
       <div className="cv-details">
@@ -15,6 +22,18 @@ const CV = ({ firstName, lastName, email, phoneNumber, aboutMe }) => {
           <h3>About Me</h3>
           <p>{aboutMe}</p>
         </div>
+      </div>
+      <div className="cv-education">
+        <h3>Education</h3>
+        {education.map((school, index) => (
+          <div key={index} className="cv-education-details">
+            <h4>{school.degreeName}</h4>
+            <div className="date-section">
+              <span>{school.schoolName} | </span>
+              <span>{school.startYear}</span> -<span>{school.endYear}</span>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -61,18 +80,18 @@ const CV = ({ firstName, lastName, email, phoneNumber, aboutMe }) => {
 //               </div>
 //             ))}
 //           </div>
-//           <div className="cv-education">
-//             <h3>Education</h3>
-//             {this.props.education.map((school, index) => (
-//               <div key={index} className="cv-education-details">
-//                 <h4>{school.degreeName}</h4>
-//                 <div className="date-section">
-//                   <span>{school.schoolName} | </span>
-//                   <span>{school.startYear}</span> -<span>{school.endYear}</span>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
+// <div className="cv-education">
+//   <h3>Education</h3>
+//   {this.props.education.map((school, index) => (
+//     <div key={index} className="cv-education-details">
+//       <h4>{school.degreeName}</h4>
+//       <div className="date-section">
+//         <span>{school.schoolName} | </span>
+//         <span>{school.startYear}</span> -<span>{school.endYear}</span>
+//       </div>
+//     </div>
+//   ))}
+// </div>
 //         </div>
 //       </div>
 //     );

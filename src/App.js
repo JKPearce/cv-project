@@ -29,6 +29,7 @@ const App = () => {
       return newEducation;
     });
   }
+
   function handleExperience(e, i) {
     setExperience((prevState) => {
       const newExperience = [...prevState];
@@ -70,7 +71,7 @@ const App = () => {
         ))}
         <button onClick={addEducation}>Add Education</button>
       </div>
-      <CV {...general} />
+      <CV {...general} education={education} />
     </main>
   );
 };
