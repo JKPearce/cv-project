@@ -1,72 +1,120 @@
 /* eslint-disable no-useless-constructor */
 //A section to add general information like name, email, phone number.
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 
-class General extends Component {
-  constructor(props) {
-    super(props);
+const General = ({ general, onChange }) => {
+  return (
+    <div className="general">
+      <input
+        type="text"
+        name="firstName"
+        id="firstName"
+        placeholder="First Name"
+        onChange={(e) => onChange(e)}
+        value={general.firstName}
+      />
+      <input
+        type="text"
+        name="lastName"
+        id="lastName"
+        placeholder="Last Name"
+        onChange={(e) => onChange(e)}
+        value={general.lastName}
+      />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Email"
+        onChange={(e) => onChange(e)}
+        value={general.email}
+      />
+      <input
+        type="tel"
+        name="phoneNumber"
+        id="phoneNumber"
+        placeholder="Phone Number"
+        onChange={(e) => onChange(e)}
+        value={general.phoneNumber}
+      />
+      <textarea
+        name="aboutMe"
+        id="aboutMe"
+        placeholder="A short description / About me"
+        rows="3"
+        maxLength={300}
+        onChange={(e) => onChange(e)}
+        value={general.aboutMe}
+      />
+    </div>
+  );
+};
 
-    this.state = {};
+// class General extends Component {
+//   constructor(props) {
+//     super(props);
 
-    this.handleChange = this.handleChange.bind(this);
-  }
+//     this.state = {};
 
-  handleChange = (e) => {
-    this.setState(
-      {
-        [e.target.name]: e.target.value,
-      },
-      () => this.props.parentCallback(this.state)
-    );
-  };
+//     this.handleChange = this.handleChange.bind(this);
+//   }
 
-  render() {
-    return (
-      <div className="general">
-        <input
-          type="text"
-          name="firstName"
-          id="firstName"
-          placeholder="First Name"
-          onChange={this.handleChange}
-          value={this.state.firstName}
-        />
-        <input
-          type="text"
-          name="lastName"
-          id="lastName"
-          placeholder="Last Name"
-          onChange={this.handleChange}
-          value={this.state.lastName}
-        />
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Email"
-          onChange={this.handleChange}
-          value={this.state.email}
-        />
-        <input
-          type="tel"
-          name="phoneNumber"
-          id="phoneNumber"
-          placeholder="Phone Number"
-          onChange={this.handleChange}
-          value={this.state.phoneNumber}
-        />
-        <textarea
-          name="aboutMe"
-          id="aboutMe"
-          placeholder="A short description / About me"
-          rows="3"
-          maxLength={300}
-          onChange={this.handleChange}
-          value={this.state.aboutMe}
-        />
-      </div>
-    );
-  }
-}
+//   handleChange = (e) => {
+//     this.setState(
+//       {
+//         [e.target.name]: e.target.value,
+//       },
+//       () => this.props.parentCallback(this.state)
+//     );
+//   };
+
+//   render() {
+//     return (
+//       <div className="general">
+//         <input
+//           type="text"
+//           name="firstName"
+//           id="firstName"
+//           placeholder="First Name"
+//           onChange={this.handleChange}
+//           value={this.state.firstName}
+//         />
+//         <input
+//           type="text"
+//           name="lastName"
+//           id="lastName"
+//           placeholder="Last Name"
+//           onChange={this.handleChange}
+//           value={this.state.lastName}
+//         />
+//         <input
+//           type="email"
+//           name="email"
+//           id="email"
+//           placeholder="Email"
+//           onChange={this.handleChange}
+//           value={this.state.email}
+//         />
+//         <input
+//           type="tel"
+//           name="phoneNumber"
+//           id="phoneNumber"
+//           placeholder="Phone Number"
+//           onChange={this.handleChange}
+//           value={this.state.phoneNumber}
+//         />
+//         <textarea
+//           name="aboutMe"
+//           id="aboutMe"
+//           placeholder="A short description / About me"
+//           rows="3"
+//           maxLength={300}
+//           onChange={this.handleChange}
+//           value={this.state.aboutMe}
+//         />
+//       </div>
+//     );
+//   }
+// }
 
 export default General;
