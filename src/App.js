@@ -52,6 +52,15 @@ const App = () => {
     setEducation(newExperience);
   }
 
+  function deleteEducation(index) {
+    setEducation((prevState) => {
+      console.log(index);
+      const newEducationState = [...prevState];
+      newEducationState.splice(index, 1);
+      return newEducationState;
+    });
+  }
+
   //delete={() => this.delete("education", i)}
   return (
     <main>
@@ -66,6 +75,7 @@ const App = () => {
               id={i}
               key={i}
               onChange={handleEducation}
+              remove={deleteEducation}
             />
           </>
         ))}
@@ -160,18 +170,18 @@ const App = () => {
 //     this.setState({ experience: newExperience });
 //   };
 
-//   delete = (arrayName, index) => {
-//     this.setState(() => {
-//       console.log("entered delete");
-//       const newState =
-//         arrayName === "education"
-//           ? [...this.state.education]
-//           : [...this.state.experience];
+// delete = (arrayName, index) => {
+//   this.setState(() => {
+//     console.log("entered delete");
+//     const newState =
+//       arrayName === "education"
+//         ? [...this.state.education]
+//         : [...this.state.experience];
 
-//       newState.splice(index, 1);
-//       return { [arrayName]: newState };
-//     });
-//   };
+//     newState.splice(index, 1);
+//     return { [arrayName]: newState };
+//   });
+// };
 
 //   render() {
 //     const { general, education, experience } = this.state;
